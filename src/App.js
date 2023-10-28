@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Allvideo from './pages/Allvideo';
+import { Route, Routes } from 'react-router-dom';
+import Nextpage from './pages/Nextpage'
+import Watchhistory from './pages/Watchhistory';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Header/>
+   <div className="container m-5">
+    <Routes>
+      <Route path='/' element={<Allvideo/>}/>
+      <Route path='/Nextpage' element={<Nextpage/>}/>
+      <Route path='/watch-history' element={<Watchhistory/>}/>
+
+    </Routes>
     </div>
+    <Footer/>
+    
+    </>
   );
 }
 
